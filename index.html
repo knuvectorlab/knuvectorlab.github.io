@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>질병매개곤충학 연구실 | Laboratory of Vector Biology — 경북대학교</title>
+<meta name="description" content="경북대학교 곤충생명과학과 질병매개곤충학 연구실. 참진드기 흡혈 생리의 분자 기전과 매개충 분자진단을 연구합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEFF0;
+  --panel:#FFFFFF;
+  --ink:#161C24;
+  --ink-soft:#5C6672;
+  --rule:#CCD3D7;
+  --engorged:#A85A28;
+  --stain:#245E5C;
+  --nav-h:60px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans KR",system-ui,sans-serif;
+  font-size:16px;line-height:1.8;letter-spacing:-.01em;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:"Noto Serif KR",Georgia,serif}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 26px}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;height:var(--nav-h);
+  background:rgba(237,239,240,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-in{max-width:1060px;margin:0 auto;padding:0 26px;height:100%;
+  display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:"Noto Serif KR",serif;font-weight:700;font-size:1rem;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--stain);font-weight:400;font-size:.76rem;letter-spacing:.06em;margin-left:8px}
+.nav-links{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav-links a{
+  text-decoration:none;font-size:.85rem;color:var(--ink-soft);
+  padding:4px 0;border-bottom:1.5px solid transparent;transition:color .15s,border-color .15s;
+}
+.nav-links a:hover{color:var(--ink);border-color:var(--engorged)}
+@media(max-width:820px){
+  .nav-links{gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .nav-links a{font-size:.78rem;white-space:nowrap}
+  .brand span{display:none}
+}
+
+/* ---------- hero ---------- */
+header.hero{padding:74px 0 0}
+.eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 20px}
+h1{
+  font-family:"Noto Serif KR",serif;font-weight:700;
+  font-size:clamp(2rem,5.6vw,3.5rem);line-height:1.18;margin:0 0 8px;letter-spacing:-.025em;
+}
+.hero-en{font-size:clamp(.95rem,2vw,1.2rem);color:var(--stain);letter-spacing:.06em;margin:0 0 6px;font-weight:500}
+.hero-affil{color:var(--ink-soft);font-size:.95rem;margin:0}
+.hero-lead{
+  margin:34px 0 0;font-size:clamp(1rem,2.1vw,1.12rem);max-width:74ch;
+}
+.hero-lead b{font-weight:700}
+
+/* ---------- signature timeline ---------- */
+.signature{margin:50px 0 0;padding:32px 0 28px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.sig-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 18px}
+.sig-svg{width:100%;height:auto;display:block;overflow:visible}
+.sig-caption{margin:20px 0 0;font-size:.9rem;color:var(--ink-soft)}
+.sig-caption b{color:var(--ink);font-weight:600}
+
+/* ---------- sections ---------- */
+section{padding:74px 0 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 6px;flex-wrap:wrap}
+.sec-num{font-family:"Noto Serif KR",serif;font-size:1.4rem;color:var(--engorged);line-height:1}
+h2{font-family:"Noto Serif KR",serif;font-size:clamp(1.4rem,3.2vw,1.9rem);font-weight:700;margin:0;letter-spacing:-.02em}
+.sec-en{font-size:.8rem;letter-spacing:.12em;color:var(--stain);margin:0 0 26px;text-transform:uppercase}
+p{margin:0 0 18px}
+
+/* ---------- cards ---------- */
+.card{background:var(--panel);border:1px solid var(--rule);padding:28px 30px;margin:0 0 18px}
+h3{font-size:1.02rem;font-weight:700;margin:0 0 12px;letter-spacing:-.01em}
+h3 .sub{display:block;font-weight:400;font-size:.76rem;letter-spacing:.08em;color:var(--stain);margin-top:4px;text-transform:uppercase}
+ul{margin:0;padding-left:0;list-style:none}
+ul li{position:relative;padding-left:18px;margin-bottom:10px;font-size:.95rem}
+ul li:last-child{margin-bottom:0}
+ul li::before{content:"";position:absolute;left:0;top:.78em;width:7px;height:1px;background:var(--engorged)}
+.note{font-size:.88rem;color:var(--ink-soft);margin:16px 0 0;padding-top:15px;border-top:1px dashed var(--rule)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+
+/* ---------- table ---------- */
+.table-wrap{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);padding:6px 24px 18px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:560px}
+th,td{text-align:left;padding:15px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;border-bottom:1.5px solid var(--ink)}
+tr:last-child td{border-bottom:none}
+td em{font-style:normal;color:var(--ink-soft);font-size:.85rem}
+td.agency{color:var(--stain);font-weight:500;white-space:nowrap}
+td.term{color:var(--ink-soft);white-space:nowrap;font-size:.88rem}
+
+/* ---------- people ---------- */
+.pi-card{display:grid;grid-template-columns:200px 1fr;gap:30px;align-items:start}
+@media(max-width:700px){.pi-card{grid-template-columns:1fr}}
+.portrait{
+  width:100%;aspect-ratio:4/5;background:#DDE2E4;border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:.78rem;text-align:center;padding:10px
+}
+.cv{margin:14px 0 0;font-size:.92rem}
+.cv div{padding:6px 0;border-bottom:1px dashed var(--rule);display:flex;gap:14px}
+.cv div:last-child{border-bottom:none}
+.cv dt{flex:0 0 88px;color:var(--ink-soft);font-size:.82rem;margin:0}
+.cv dd{margin:0}
+.roster{font-size:.94rem;color:var(--ink-soft)}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
+.contact a{color:var(--stain);text-decoration:none;border-bottom:1px solid var(--rule)}
+.contact a:hover{border-color:var(--stain)}
+
+footer{margin-top:80px;border-top:3px solid var(--ink);padding:30px 0 60px;font-size:.85rem;color:var(--ink-soft)}
+*:focus-visible{outline:2px solid var(--engorged);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">질병매개곤충학 연구실<span>Lab of Vector Biology</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">소개</a></li>
+      <li><a href="#research">연구</a></li>
+      <li><a href="#funding">과제</a></li>
+      <li><a href="#collab">협력</a></li>
+      <li><a href="#people">구성원</a></li>
+      <li><a href="#join">모집</a></li>
+      <li><a href="#contact">연락처</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+<header class="hero">
+  <p class="eyebrow">경북대학교 생태환경대학 곤충생명과학과</p>
+  <h1>질병매개곤충학 연구실</h1>
+  <p class="hero-en">Laboratory of Vector Biology</p>
+  <p class="hero-affil">Kyungpook National University · 김동흔 부교수</p>
+
+  <p class="hero-lead">
+    참진드기가 어떻게 피를 빠는지를 분자 수준에서 해독하고,
+    그 지식을 매개체 감시와 방제 기술로 연결합니다.
+  </p>
+
+  <div class="signature">
+    <p class="sig-label">Blood feeding of <i>Haemaphysalis longicornis</i></p>
+    <svg class="sig-svg" viewBox="0 0 900 168" role="img"
+         aria-label="작은소피참진드기 암컷의 흡혈 단계 도해. 저속흡혈기 약 120시간, 급속흡혈기 약 30시간, 흡혈 종료. 급속흡혈기에 표피가 10배 팽창하고 체중이 100배 증가한다.">
+      <line x1="8" y1="112" x2="892" y2="112" stroke="#CCD3D7" stroke-width="1"/>
+      <rect x="8" y="106" width="470" height="12" fill="#D7DCDE"/>
+      <rect x="478" y="100" width="330" height="24" fill="#A85A28" opacity=".16"/>
+      <rect x="700" y="100" width="108" height="24" fill="#A85A28" opacity=".34"/>
+      <line x1="478" y1="60" x2="478" y2="136" stroke="#A85A28" stroke-width="1.5"/>
+      <text x="484" y="56" font-size="12" fill="#A85A28" font-weight="700" letter-spacing="1">RE0</text>
+      <text x="484" y="72" font-size="10.5" fill="#5C6672">급속흡혈 개시</text>
+      <ellipse cx="120" cy="112" rx="9" ry="7" fill="#161C24"/>
+      <ellipse cx="560" cy="112" rx="17" ry="13" fill="#8A5433"/>
+      <ellipse cx="810" cy="112" rx="34" ry="27" fill="#A85A28"/>
+      <text x="8" y="150" font-size="11.5" fill="#161C24" font-weight="700">저속흡혈기</text>
+      <text x="8" y="164" font-size="10.5" fill="#5C6672">약 120시간 · 큐티클 합성</text>
+      <text x="486" y="150" font-size="11.5" fill="#A85A28" font-weight="700">급속흡혈기</text>
+      <text x="486" y="164" font-size="10.5" fill="#5C6672">약 30시간 · 흡혈량의 90%</text>
+      <text x="700" y="150" font-size="11.5" fill="#161C24" font-weight="700">종료</text>
+      <text x="700" y="164" font-size="10.5" fill="#5C6672">표피 10배 · 체중 100배</text>
+    </svg>
+    <p class="sig-caption">
+      암컷 참진드기의 흡혈은 최대 7일에 걸쳐 진행되지만, 전체 흡혈량의 <b>90%</b>는 마지막 약 30시간에 집중됩니다.
+      개시(교미)와 결과(형태 변화)는 알려져 있으나, 그 사이를 잇는 <b>조직–분자–시간의 신호 네트워크</b>는
+      아직 규명되지 않았습니다. 본 연구실은 이 공백을 연구의 출발점으로 삼습니다.
+    </p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="sec-head"><h2>연구실 소개</h2></div>
+  <p class="sec-en">About</p>
+  <p>
+    기후변화와 함께 매개충 감염병의 위험이 전 지구적으로 확대되고 있습니다. 국내에서는 작은소피참진드기
+    (<i>Haemaphysalis longicornis</i>)가 매개하는 중증열성혈소판감소증후군(SFTS)이 2013년 첫 보고 이후
+    매년 지속적으로 발생하고 있으며, 모기 매개 질병 또한 새로운 위협으로 남아 있습니다.
+  </p>
+  <p>
+    본 연구실은 <b>매개충의 흡혈 생리를 분자 수준에서 해독</b>하는 것을 중심 과제로 삼습니다.
+    진드기가 숙주에 부착하고 급속흡혈기에 체적을 수십 배로 팽창시키는 과정은 신경내분비 신호와 체벽 구조 재편이
+    정교하게 맞물린 결과입니다. 저희는 이 과정을 조직·분자·기능의 세 층위에서 해부하고,
+    여기서 확보한 표적 유전자를 차세대 방제 기술로 연결합니다.
+  </p>
+  <p>
+    아울러 분자진단과 인공지능 기반 동정 체계를 개발하여, 실험실의 기초생리학을 검역과 예찰이라는
+    현장 과제로 확장하고 있습니다.
+  </p>
+</section>
+
+<section id="research">
+  <div class="sec-head"><h2>연구 분야</h2></div>
+  <p class="sec-en">Research Program</p>
+
+  <div class="card">
+    <div class="sec-head"><span class="sec-num">Ⅰ</span>
+      <h3 style="margin:0">급속흡혈 조절 신호 네트워크<span class="sub">Signaling Network Governing Rapid Engorgement</span></h3>
+    </div>
+    <p style="font-size:.95rem">
+      급속흡혈기의 초기 18시간에는 표피 가소화와 중장의 기능 전환 등 생리적 변화가, 마지막 12시간에는
+      표피 팽창과 체중 급증이라는 형태적 변화가 일어납니다. 어떤 조직이 어떤 순서로 이 과정을 지휘하는지를 규명합니다.
+    </p>
+    <ul>
+      <li><b>조직 수준</b> — 난소·중추신경계·침샘·중장·혈림프 추출물의 급속흡혈 유도 활성 검정 및 조직 간 단계적 조절축 도출</li>
+      <li><b>분자 수준</b> — 전사체·단백체 분석, HPLC-ECD 기반 생체아민 정량, LC-MS/MS 기반 엑디스테로이드·유충호르몬 동역학</li>
+      <li><b>기능 수준</b> — RNAi single·double·triple knockdown, 재조합 단백질 rescue assay, 생체아민 작용제·길항제 약리 검증</li>
+      <li><b>통합</b> — 상·하위 신호의 계층구조 규명 및 급속흡혈 조절 신호 네트워크 모델 완성</li>
+    </ul>
+    <p class="note">
+      선행 성과 — 두 종류 도파민 수용체 knockdown 시 급속흡혈기간이 최대 80시간 지연되고 표피 팽창과 체중이
+      각각 44%, 45% 감소함을 규명하였으며, 옥토파민 수용체와의 이중 knockdown에서 표피 팽창이 최대 50%까지
+      감소함을 확인하였습니다. 생체아민 축은 조절 체계의 <i>일부</i>이며, 나머지 인자의 탐색이 현재 연구의 초점입니다.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><span class="sec-num">Ⅱ</span>
+      <h3 style="margin:0">큐티클 팽창의 이중 신호 축<span class="sub">Dual-Axis Regulation of Cuticle Expansion</span></h3>
+    </div>
+    <p style="font-size:.95rem">
+      큐티클은 급속 팽창을 가능하게 하는 생체역학적 적응이면서, 동시에 수분 손실과 접촉성 살비제의 침투를 막는
+      최외곽 방벽입니다. 이 구조 변형이 두 개의 독립적 호르몬 축에 의해 조절된다는 가설을 검증합니다.
+    </p>
+    <ul>
+      <li><b>제1축 · 생체아민</b> — 도파민·옥토파민 수용체를 통한 큐티클 가소화 조절</li>
+      <li><b>제2축 · 키틴합성/엑디손</b> — 엑디스테로이드를 상위 조절자로 하는 키틴 합성 및 신규 큐티클 공급 경로</li>
+      <li><b>수렴 검증</b> — 조합 knockdown의 가산적·상위적 효과 판정을 통한 공유 분자노드 규명</li>
+      <li><b>응용 전개</b> — 큐티클 민감화를 통한 기등록 살비제 감수성 증진 및 신규 방제 표적 발굴</li>
+    </ul>
+    <p class="note">
+      방법론 — 모든 분석은 급속흡혈 개시 시점(RE0) 기준 상대 시간 축으로 정렬하며,
+      전사체·단백체 교차검증(cross-omics convergence)을 통과한 후보만 다음 단계로 진행합니다.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><span class="sec-num">Ⅲ</span>
+      <h3 style="margin:0">분자진단 및 AI 동정 체계<span class="sub">Molecular Diagnostics and AI-based Identification</span></h3>
+    </div>
+    <p style="font-size:.95rem">
+      검역과 매개체 감시의 병목은 동정입니다. 참진드기는 발육단계·성적 이형·흡혈 전후 체적 변화로 오동정 위험이 크고,
+      등에모기는 크기가 작고 종내 변이가 커서 형태 형질 단독으로는 종 판별에 한계가 있습니다.
+    </p>
+    <div class="grid">
+      <div>
+        <h3>AI 동정용 형태 데이터셋<span class="sub">Deep-learning Dataset</span></h3>
+        <ul>
+          <li>참진드기 10종·등에모기 35종의 학습용 데이터셋 구축</li>
+          <li>형태학적 동정과 mtCOI DNA 바코드 검증 병행</li>
+          <li>발육단계·성별·흡혈상태·형질부위별 다층 이미지 생산</li>
+          <li>검역관이 AI 판정 근거를 검토할 표준영상 및 검색도해</li>
+        </ul>
+      </div>
+      <div>
+        <h3>환경 DNA 기반 조기탐지<span class="sub">eDNA Early Detection</span></h3>
+        <ul>
+          <li>고위험 사과 해충 3종(코드린나방, 오리엔탈·타우과실파리) 표적</li>
+          <li>국내 미유입 종인 코드린나방은 미국 현지 발생지에서 개체군 확보 및 검출 성능 검증</li>
+          <li>환경조건별 eDNA 추출법 표준화 및 종특이 프라이머 설계</li>
+          <li>Cocktail 프라이머 기반 multiplex PCR 다중 종 진단</li>
+          <li>LAMP 등온증폭 현장 진단 키트 개발 및 실증</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">
+      현장 예찰 — 질병 매개체(모기·참진드기·털진드기) 월별 발생 밀도 조사 및 검역해충 발생 예찰.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><span class="sec-num">Ⅳ</span>
+      <h3 style="margin:0">진드기 매개 병원체 스크리닝<span class="sub">Tick-borne Pathogen Screening</span></h3>
+    </div>
+    <p style="font-size:.95rem">
+      국내에서는 SFTS 바이러스 외 잠재적·미보고 병원체에 대한 조사와 데이터 구축이 미진합니다.
+      단일 진드기에 감염된 다수 병원체를 한 번에 검출하는 고속 스크리닝 체계를 프랑스 연구진과 함께 도입하고 있습니다.
+    </p>
+    <ul>
+      <li>High-throughput microfluidic real-time PCR 기반 단일 진드기 다중 병원체 스크리닝</li>
+      <li>진드기 뇌·침샘 특화 면역조직화학법 및 투과현미경법 기술 이전</li>
+      <li>검출 병원체 표적 신속 진단 키트 개발 및 지자체 공급</li>
+      <li>단성/양성생식 개체군의 지역별 분포와 보균 병원체 상관성 분석</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><span class="sec-num">Ⅴ</span>
+      <h3 style="margin:0">살충제 저항성 모니터링 및 방제 전략<span class="sub">Insecticide Resistance Monitoring</span></h3>
+    </div>
+    <p style="font-size:.95rem">
+      살충제 저항성은 방제 실패와 농약 오·남용으로 직결되지만, 어느 지역에서 어느 약제에 저항성이 발달했는지에 대한
+      정량적 지도는 아직 충분하지 않습니다. 전국 단위 개체군을 표준화된 생물검정으로 평가합니다.
+    </p>
+    <ul>
+      <li>주요 농업해충 7종(꽃노랑총채벌레, 목화진딧물, 점박이응애, 담배가루이, 복숭아혹진딧물, 조팝나무진딧물, 볼록총채벌레) 권역별 저항성 검정</li>
+      <li>시군별 농가 개체군 확보 및 농약사용기록표 기반 방제력 분석</li>
+      <li>약제별·지역별 저항성 지도 및 데이터베이스 작성</li>
+      <li>작용기작(MOA)별 방제 효율성 평가 및 해충별 약제 추천 매뉴얼</li>
+    </ul>
+  </div>
+</section>
+
+<section id="funding">
+  <div class="sec-head"><h2>수행 연구과제</h2></div>
+  <p class="sec-en">Research Funding</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>과제명</th><th>지원기관</th><th>기간</th></tr></thead>
+      <tbody>
+        <tr><td>급속흡혈 조절 분자생리적 신호 네트워크 구명 <em>(핵심연구 유형A)</em></td><td class="agency">한국연구재단</td><td class="term">2026–2030</td></tr>
+        <tr><td>참진드기 급속흡혈기 큐티클 팽창 조절 이중 신호 네트워크 규명과 살비제 감수성 증진</td><td class="agency">한-체코 공동연구사업</td><td class="term">2026–2029</td></tr>
+        <tr><td>딥러닝 활용을 위한 검역병해충 분류 기반 데이터셋 구축 <em>(동물질병 매개체 분야)</em></td><td class="agency">농림축산검역본부</td><td class="term">2026–2028</td></tr>
+        <tr><td>eDNA 기반 사과 해충 조기 탐지 기술 및 관리 방안 개발 <em>(국경 이동성 원예작물 해충)</em></td><td class="agency">농촌진흥청</td><td class="term">2026–2030</td></tr>
+        <tr><td>STAR for tick research — 진드기 신경생리 및 병원체 고속 스크리닝</td><td class="agency">한-프랑스 협력기반조성사업</td><td class="term">2026–2028</td></tr>
+        <tr><td>저항성 우려 농약에 대한 해충 모니터링 <em>(공동연구 참여)</em></td><td class="agency">농촌진흥청</td><td class="term">2025–2028</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="collab">
+  <div class="sec-head"><h2>국제 협력</h2></div>
+  <p class="sec-en">International Collaboration</p>
+  <div class="grid">
+    <div class="card" style="margin:0">
+      <h3>France<span class="sub">UMR-BIPAR · ANSES / INRAE / EnvA</span></h3>
+      <p style="font-size:.94rem;margin:0">Dr. Ladislav Simo (MiTick 팀장, NeuroTick 그룹) 연구진과 진드기 신경생리 및 고속 병원체 스크리닝 기술을 교류합니다. 경북대학교 생태환경대학과 INRAE 간 국제공동연구협약을 추진하고 있습니다.</p>
+    </div>
+    <div class="card" style="margin:0">
+      <h3>Czech Republic<span class="sub">Institute of Parasitology, Biology Centre CAS</span></h3>
+      <p style="font-size:.94rem;margin:0">Dr. Jan Perner (Disease Vectors and Pathogens) 연구진과 큐티클 구조·오믹스·초미세구조 국소화를 공동 수행합니다. 한국의 신호분자 탐색과 체코의 구조 분석이 상호 검증하는 구조입니다.</p>
+    </div>
+    <div class="card" style="margin:0">
+      <h3>United States<span class="sub">KSU · Penn State · Univ. of Florida</span></h3>
+      <p style="font-size:.94rem;margin:0">Dr. Yoonseong Park, Dr. Jason Rasgon, Dr. Daniel Swale 연구진과 오믹스 분석 및 재조합 단백질 기반 공동 실험을 수행해 왔습니다. 국내 미유입 검역해충인 코드린나방에 대해서는 미국 현지 발생지를 대상으로 eDNA 검출 기술의 현장 검증을 추진합니다.</p>
+    </div>
+    <div class="card" style="margin:0">
+      <h3>국내 컨소시엄<span class="sub">Domestic Network</span></h3>
+      <p style="font-size:.94rem;margin:0">국립순천대·전북대·부산대·영남대(검역 AI), 제주대·경상국립대·서울대(국경 이동성 해충), 가천대·전남대·충남대(저항성 모니터링) 등 다기관 컨소시엄에 참여하고 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="infra">
+  <div class="sec-head"><h2>연구 기반</h2></div>
+  <p class="sec-en">Research Infrastructure</p>
+  <div class="card">
+    <h3>동물흡혈시스템<span class="sub">Established 2021</span></h3>
+    <p style="font-size:.95rem;margin:0">
+      참진드기는 알–유충–약충–성충 전 발달단계에서 흡혈이 필요해 생활사 완결에 최소 4개월이 소요되며,
+      실험실 개체군 유지가 매우 어렵습니다. 본 연구실은 2021년부터
+      <b>작은소피참진드기 단성생식·양성생식 개체군을 연중 계대사육</b>하며 분자생리학 실험을 수행하고 있습니다.
+      이 사육 기반은 모든 연구 축의 전제 조건입니다.
+    </p>
+  </div>
+  <div class="card">
+    <h3>보유 기술 및 장비</h3>
+    <ul>
+      <li>검증 항체패널 — anti-D1 / InvD1L / OAR-α / OAR-β</li>
+      <li>RE0 기준 흡혈 단계 staging 프로토콜</li>
+      <li>세포 기반 수용체 활성 분석 플랫폼 (cAMP · Ca²⁺ 리포터)</li>
+      <li>RNAi 및 재조합 단백질 rescue 기반 기능 검증 체계</li>
+      <li>HPLC-ECD / LC-MS/MS 정량 분석</li>
+      <li>NGS 데이터 분석 및 딥러닝 기반 영상 분석 파이프라인</li>
+      <li>실체현미경 이미징 시스템 (Leica M205C · DFC7000 T, Olympus SZ61 · CX43)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="people">
+  <div class="sec-head"><h2>구성원</h2></div>
+  <p class="sec-en">People</p>
+  <div class="card">
+    <div class="pi-card">
+      <!-- 교수님 사진으로 교체하세요: <img class="portrait" src="images/kim.jpg" alt="김동흔 교수"> -->
+      <div class="portrait">사진 영역<br>images/kim.jpg</div>
+      <div>
+        <h3 style="font-size:1.25rem;font-family:'Noto Serif KR',serif">김동흔<span class="sub">Donghun Kim, Ph.D. · Associate Professor</span></h3>
+        <p style="font-size:.94rem">
+          매개충 분자생리학을 전공하였으며, 참진드기의 흡혈 조절 기전과 신경내분비 신호전달을 중심으로 연구하고 있습니다.
+          Journal of Asia-Pacific Entomology (Insect Physiology) 및 Entomological Research의 Associate Editor로 활동하고 있습니다.
+        </p>
+        <dl class="cv">
+          <div><dt>Ph.D.</dt><dd>Kansas State University · Entomology</dd></div>
+          <div><dt>Postdoc</dt><dd>The Pennsylvania State University</dd></div>
+          <div><dt>Editor</dt><dd>J. Asia-Pacific Entomology · Entomological Research</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>연구원<span class="sub">Members</span></h3>
+    <p class="roster" style="margin:0">
+      <!-- 구성원 명단을 여기에 채워 넣으세요.
+           예: <b>박사과정</b> 홍길동 · 김철수 &nbsp;|&nbsp; <b>석사과정</b> ... -->
+      구성원 명단 준비 중입니다.
+    </p>
+  </div>
+</section>
+
+<section id="join">
+  <div class="sec-head"><h2>연구원 모집</h2></div>
+  <p class="sec-en">Join Us</p>
+  <p>
+    매개충 분자생리학, 기능유전체학, 분자진단 및 AI 기반 동정 기술에 관심 있는 학부 연구생과 대학원생을 상시 모집합니다.
+    실험 경험은 요구하지 않으며, 연구 주제에 대한 지속적 관심과 정량적 사고를 가장 중요하게 봅니다.
+    진행 중인 과제를 통해 체코·프랑스 연구기관에서의 공동 실험 및 국제학술대회 참가 기회가 열려 있습니다.
+  </p>
+</section>
+
+<section id="contact">
+  <div class="sec-head"><h2>연락처</h2></div>
+  <p class="sec-en">Contact</p>
+  <div class="contact-grid">
+    <div class="card contact" style="margin:0">
+      <h3>김동흔 <span class="sub">Principal Investigator</span></h3>
+      <p style="font-size:.94rem;margin:0">
+        <a href="mailto:dklome2018@knu.ac.kr">dklome2018@knu.ac.kr</a><br>
+        054-530-1214
+      </p>
+    </div>
+    <div class="card contact" style="margin:0">
+      <h3>연구실 위치 <span class="sub">Location</span></h3>
+      <p style="font-size:.94rem;margin:0">
+        경북대학교 상주캠퍼스<br>
+        생태환경대학 곤충생명과학과
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Laboratory of Vector Biology, Kyungpook National University
+</footer>
+
+</div>
+</body>
+</html>
