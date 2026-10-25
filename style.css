@@ -33,8 +33,12 @@ body{
   line-height:1.72;
   letter-spacing:-.014em;
   -webkit-font-smoothing:antialiased;
+  /* 한글 단어가 줄바꿈에서 중간에 끊기지 않도록 */
+  word-break:keep-all;
+  overflow-wrap:break-word;
 }
 img{max-width:100%;display:block}
+svg{max-width:100%}
 a{color:inherit;text-decoration:none}
 .display{font-family:"Gothic A1","Noto Sans KR",sans-serif}
 
@@ -77,10 +81,14 @@ a{color:inherit;text-decoration:none}
 .menu a.current::after{opacity:1}
 
 @media(max-width:940px){
-  .mast-in{flex-direction:column;align-items:flex-start;gap:0;padding:0 20px}
+  .mast-in{flex-direction:column;align-items:stretch;gap:0;padding:0 20px}
+  .mast-in > nav{width:100%;min-width:0;max-width:100%}
   .brand{padding:14px 0 6px}
   .brand img{height:34px}
-  .menu{padding-bottom:10px;gap:0;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+  .menu{
+    padding-bottom:10px;gap:0;flex-wrap:nowrap;
+    overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:100%;
+  }
   .menu::-webkit-scrollbar{display:none}
   .menu a{padding:6px 10px;white-space:nowrap;font-size:.82rem}
 }
@@ -201,39 +209,95 @@ ul.dashed li .group{display:block;color:var(--navy);font-weight:600;margin-botto
 .aside-note b{color:var(--ink);font-weight:600}
 
 
-/* ---- research axis: figure + funding support ---- */
-.axis-figure{
-  margin:26px 0 0;padding:26px 28px;background:var(--wash);border-radius:6px;max-width:70ch;
+/* ---- research axis: PPT-faithful accordion ---- */
+.topic{
+  border-top:1px solid var(--line);
 }
-.icon-flow{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.icon-flow img{height:58px;width:auto}
-.icon-flow .sep{
-  width:9px;height:9px;border-right:2px solid var(--pale);border-bottom:2px solid var(--pale);
-  transform:rotate(-45deg);flex:0 0 auto;
+.topic:last-of-type{border-bottom:1px solid var(--line)}
+.topic > summary{
+  list-style:none;cursor:pointer;
+  display:flex;align-items:flex-start;gap:14px;
+  padding:26px 0;
 }
-.icon-set{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.icon-unit{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:62px}
-.icon-unit img{height:52px;width:auto}
-.icon-unit span{font-size:.74rem;color:var(--ink-soft);text-align:center;line-height:1.4}
-.fig-label{
-  font-size:.74rem;font-weight:600;letter-spacing:.09em;
-  color:var(--teal);margin:0 0 14px;
+.topic > summary::-webkit-details-marker{display:none}
+.topic > summary:hover .topic-title{color:var(--navy)}
+.topic-no{
+  flex:0 0 auto;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  font-family:"Gothic A1","Noto Sans KR",sans-serif;
+  font-size:.76rem;font-weight:700;letter-spacing:.02em;
+  margin-top:2px;
 }
-.fig-split{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-@media(max-width:640px){.fig-split{grid-template-columns:1fr;gap:24px}}
-.fig-split > div + div{border-left:1px solid var(--line);padding-left:28px}
-@media(max-width:640px){.fig-split > div + div{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:24px}}
+.topic[open] .topic-no{background:var(--navy)}
+.topic-title{
+  flex:1 1 auto;min-width:0;
+  font-family:"Gothic A1","Noto Sans KR",sans-serif;
+  font-size:clamp(1.12rem,2.2vw,1.42rem);font-weight:800;
+  letter-spacing:-.028em;line-height:1.34;margin:0;
+  transition:color .15s;
+}
+.topic-title .en{font-weight:600;color:var(--blue)}
+.topic-caret{
+  flex:0 0 auto;width:9px;height:9px;margin:12px 4px 0 0;
+  border-right:2px solid var(--pale);border-bottom:2px solid var(--pale);
+  transform:rotate(45deg);transition:transform .2s;
+}
+.topic[open] .topic-caret{transform:rotate(-135deg);border-color:var(--navy)}
 
-.support{
-  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
-  margin:26px 0 0;padding-top:18px;border-top:1px solid var(--line);max-width:70ch;
+.topic-body{padding:0 0 34px 44px}
+@media(max-width:640px){.topic-body{padding-left:0}}
+.topic-lead{
+  font-size:.97rem;color:var(--navy);margin:0 0 4px;max-width:78ch;line-height:1.7;
 }
-.support .lbl{
-  font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-soft);flex:0 0 auto;
+.topic-rule{width:54px;height:2px;background:var(--teal);margin:16px 0 22px;border:0}
+
+.topic-cols{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:start}
+@media(max-width:860px){.topic-cols{grid-template-columns:1fr;gap:24px}}
+.topic-cols .fig{justify-self:end;max-width:400px;width:100%}
+.topic-cols.fig-sm .fig{max-width:220px}
+@media(max-width:860px){.topic-cols .fig{justify-self:center}}
+.topic-cols .fig svg{width:100%;height:auto;display:block}
+.topic-cols .fig figcaption{
+  font-size:.82rem;color:var(--ink-soft);text-align:center;margin-top:8px;
 }
-.support img{height:28px;width:auto;opacity:.85;mix-blend-mode:multiply}
-.support img.tall{height:40px}
+
+ul.ppt{margin:0;padding:0;list-style:none;max-width:none}
+ul.ppt > li{position:relative;padding-left:15px;margin-bottom:10px;font-size:.94rem;color:var(--ink)}
+ul.ppt > li:last-child{margin-bottom:0}
+ul.ppt > li::before{
+  content:"";position:absolute;left:0;top:.72em;width:4px;height:4px;border-radius:50%;background:var(--navy);
+}
+ul.ppt > li b{font-weight:600}
+ul.ppt li.head{
+  padding-left:0;font-weight:600;color:var(--navy);margin:16px 0 10px;font-size:.96rem;
+}
+ul.ppt li.head:first-child{margin-top:0}
+ul.ppt li.head::before{display:none}
+ul.ppt li.sub{padding-left:28px}
+ul.ppt li.sub::before{left:14px;background:var(--pale)}
+
+.topic-support{
+  display:flex;align-items:center;justify-content:flex-end;gap:22px;flex-wrap:wrap;
+  margin-top:26px;
+}
+.topic-support img{height:30px;width:auto;opacity:.9;mix-blend-mode:multiply}
+.topic-support img.tall{height:42px}
+
+.topic-note{
+  margin:22px 0 0;padding:15px 0 15px 20px;
+  border-left:3px solid var(--blue);max-width:none;
+}
+.note-title{
+  margin:0 0 7px;font-size:.93rem;font-weight:700;color:var(--navy);letter-spacing:-.018em;
+}
+.note-body{
+  margin:0;padding-left:20px;
+  font-size:.92rem;line-height:1.78;color:var(--ink);max-width:88ch;
+}
+.note-body .cite{color:var(--ink-soft);font-style:italic}
+.topic-sep{border:0;border-top:1px solid var(--line);margin:26px 0 0}
 
 /* ---------------- publications ---------------- */
 .filterbar{padding:26px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
