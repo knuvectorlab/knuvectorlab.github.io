@@ -248,8 +248,8 @@ ul.dashed li .group{display:block;color:var(--navy);font-weight:600;margin-botto
 
 .topic-body{padding:0 0 34px 44px}
 @media(max-width:640px){.topic-body{padding-left:0}}
-.topic-lead{
-  font-size:.97rem;color:var(--navy);margin:0 0 4px;max-width:78ch;line-height:1.7;
+.topic-body .topic-lead{
+  font-size:.97rem;color:var(--navy);margin:0 0 4px;max-width:none;line-height:1.7;
 }
 .topic-rule{width:54px;height:2px;background:var(--teal);margin:16px 0 22px;border:0}
 
@@ -279,11 +279,11 @@ ul.ppt li.sub{padding-left:28px}
 ul.ppt li.sub::before{left:14px;background:var(--pale)}
 
 .topic-support{
-  display:flex;align-items:center;justify-content:flex-end;gap:22px;flex-wrap:wrap;
-  margin-top:26px;
+  display:flex;align-items:center;justify-content:flex-end;gap:30px;flex-wrap:wrap;
+  margin-top:30px;
 }
-.topic-support img{height:30px;width:auto;opacity:.9;mix-blend-mode:multiply}
-.topic-support img.tall{height:42px}
+.topic-support img{height:54px;width:auto;opacity:.9;mix-blend-mode:multiply}
+.topic-support img.tall{height:54px}
 
 .topic-note{
   margin:22px 0 0;padding:15px 0 15px 20px;
@@ -292,9 +292,9 @@ ul.ppt li.sub::before{left:14px;background:var(--pale)}
 .note-title{
   margin:0 0 7px;font-size:.93rem;font-weight:700;color:var(--navy);letter-spacing:-.018em;
 }
-.note-body{
+.topic-note .note-body{
   margin:0;padding-left:20px;
-  font-size:.92rem;line-height:1.78;color:var(--ink);max-width:88ch;
+  font-size:.92rem;line-height:1.78;color:var(--ink);max-width:none;
 }
 .note-body .cite{color:var(--ink-soft);font-style:italic}
 .topic-sep{border:0;border-top:1px solid var(--line);margin:26px 0 0}
