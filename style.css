@@ -335,30 +335,26 @@ ul.ppt li.sub::before{left:14px;background:var(--pale)}
 .topic-sep{border:0;border-top:1px solid var(--line);margin:13px 0 0}
 
 /* ---------------- publications ---------------- */
-.filterbar{padding:26px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
-.filterbar .flabel{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);flex:0 0 auto}
-.years{display:flex;gap:6px;flex-wrap:wrap}
-.years button{
-  font:inherit;font-size:.86rem;color:var(--ink-soft);
-  background:none;border:1px solid var(--line);border-radius:999px;
-  padding:4px 14px;cursor:pointer;transition:all .15s;
-}
-.years button:hover{border-color:var(--blue);color:var(--navy)}
-.years button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-
+#publist{border-top:1.5px solid var(--ink)}
 .pub{display:grid;grid-template-columns:46px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
+.pub:last-of-type{border-bottom:1.5px solid var(--ink)}
 @media(max-width:620px){.pub{grid-template-columns:1fr;gap:8px}}
 .pub-no{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
   font-size:.92rem;font-weight:800;color:var(--pale);padding-top:2px;letter-spacing:.02em;
 }
 .pub-year{font-size:.78rem;color:var(--teal);font-weight:600;letter-spacing:.06em;margin:0 0 6px}
-.pub h3{font-size:1.02rem;font-weight:600;line-height:1.46;letter-spacing:-.016em;margin:0 0 8px;max-width:66ch}
+.pub h3{font-size:1.06rem;font-weight:600;line-height:1.5;letter-spacing:-.016em;margin:0 0 9px;max-width:none}
 .pub h3 i{font-style:italic}
-.pub .authors{font-size:.91rem;color:var(--ink-soft);margin:0 0 3px;max-width:68ch}
+.pub .authors{font-size:.92rem;color:var(--ink-soft);margin:0 0 3px;max-width:none}
 .pub .authors b{color:var(--ink);font-weight:600}
 .pub .venue{font-size:.91rem;color:var(--ink-soft);margin:0 0 13px}
 .pub .venue i{font-style:italic;color:var(--navy)}
+.pub .venue .hl{
+  display:inline-block;margin-left:9px;padding:1px 10px;
+  font-size:.75rem;font-style:normal;color:var(--teal);
+  border:1px solid var(--line);border-radius:999px;vertical-align:1px;
+}
 .pub-actions{display:flex;gap:9px;flex-wrap:wrap}
 .pub-actions a{
   font-size:.81rem;font-weight:500;color:var(--navy);
