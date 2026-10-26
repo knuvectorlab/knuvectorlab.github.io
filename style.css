@@ -271,15 +271,28 @@ ul.dashed li .group{display:block;color:var(--navy);font-weight:600;margin-botto
 }
 .topic-rule{width:54px;height:2px;background:var(--teal);margin:16px 0 22px;border:0}
 
-.topic-cols{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:start}
+.topic-cols{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:stretch}
 @media(max-width:860px){.topic-cols{grid-template-columns:1fr;gap:24px}}
-.topic-cols .fig{justify-self:end;max-width:400px;width:100%}
-.topic-cols.fig-sm .fig{max-width:220px}
-@media(max-width:860px){.topic-cols .fig{justify-self:center}}
-.topic-cols .fig svg{width:100%;height:auto;display:block}
-.topic-cols .fig figcaption{
-  font-size:.82rem;color:var(--ink-soft);text-align:center;margin-top:8px;
+
+.topic-side{display:flex;flex-direction:column;justify-self:end;width:100%;min-width:0}
+.topic-cols.t01 .topic-side{width:auto;max-width:none}
+.topic-cols.t02 .topic-side{max-width:350px}
+.topic-cols.t03 .topic-side{max-width:380px}
+.topic-cols.t04 .topic-side{max-width:380px}
+.topic-cols.t05 .topic-side{max-width:300px}
+.topic-side .fig{align-self:flex-end}
+.topic-cols.t02 .topic-side .fig{max-width:350px}
+.topic-cols.t03 .topic-side .fig{max-width:274px}
+.topic-cols.t04 .topic-side .fig{max-width:341px}
+.topic-cols.t05 .topic-side .fig{max-width:244px}
+@media(max-width:860px){
+  .topic-side{justify-self:stretch;max-width:none!important;width:100%}
+  .topic-cols.t01 .topic-side{width:100%}
+  .topic-side .fig{align-self:center;max-width:380px!important}
 }
+.topic-side .fig{margin:0;width:100%}
+.topic-side .fig svg{width:100%;height:auto;display:block}
+.topic-side .fig figcaption{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-top:8px}
 
 ul.ppt{margin:0;padding:0;list-style:none;max-width:none}
 ul.ppt > li{position:relative;padding-left:15px;margin-bottom:10px;font-size:.94rem;color:var(--ink)}
@@ -297,8 +310,8 @@ ul.ppt li.sub{padding-left:28px}
 ul.ppt li.sub::before{left:14px;background:var(--pale)}
 
 .topic-support{
-  display:flex;align-items:center;justify-content:flex-end;gap:30px;flex-wrap:wrap;
-  margin-top:30px;
+  display:flex;align-items:center;justify-content:flex-end;gap:26px;flex-wrap:wrap;
+  margin-top:auto;padding-top:10px;
 }
 .topic-support img{height:48px;width:auto;opacity:.9;mix-blend-mode:multiply}
 .topic-support img.tall{height:48px}
