@@ -402,19 +402,43 @@ td.win{color:var(--navy);font-weight:500}
 .cv dt{flex:0 0 100px;color:var(--ink-soft);font-size:.83rem;margin:0}
 .cv dd{margin:0}
 .cv dd .yr{color:var(--ink-soft);font-size:.86rem}
-
-.roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:34px;margin-top:10px}
-.member .portrait{margin-bottom:16px}
-.member .role{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:0 0 6px}
-.member .name{
+.cv-head{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
-  font-size:1.08rem;font-weight:800;margin:0 0 2px;letter-spacing:-.025em;
+  font-size:1rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);
+  margin:26px 0 4px;
 }
-.member .name-en{font-size:.84rem;color:var(--ink-soft);margin:0 0 12px}
-.member .topics{margin:0;padding:0;list-style:none}
-.member .topics li{position:relative;padding-left:14px;margin-bottom:7px;font-size:.87rem;color:var(--ink-soft);line-height:1.6}
-.member .topics li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:1px;background:var(--pale)}
-.member .edu{font-size:.84rem;color:var(--ink-soft);margin:0 0 12px;line-height:1.6}
+.cv-head span{
+  font-family:"Noto Sans KR",sans-serif;font-weight:500;font-size:.76rem;
+  color:var(--ink-soft);letter-spacing:0;margin-left:9px;
+}
+.cv-years{max-width:none}
+.cv-years dt{flex:0 0 118px;font-family:"Barlow",sans-serif;font-size:.88rem;color:var(--ink-soft);white-space:nowrap}
+.cv-years dd{line-height:1.62}
+
+.roster-rows{margin-top:10px}
+.person-group{padding-top:30px;border-top:1px solid var(--line)}
+.person-group:first-child{padding-top:14px;border-top:0}
+.group-label{
+  font-family:"Gothic A1","Noto Sans KR",sans-serif;
+  font-size:1.02rem;font-weight:800;letter-spacing:-.025em;color:var(--navy);
+  margin:0 0 26px;
+}
+.group-label span{
+  font-family:"Barlow",sans-serif;font-weight:500;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-left:10px;
+}
+.person-row{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:start;margin-bottom:40px}
+.person-row:last-child{margin-bottom:6px}
+@media(max-width:760px){.person-row{grid-template-columns:1fr;gap:26px}}
+.person-name{
+  font-family:"Gothic A1","Noto Sans KR",sans-serif;
+  font-size:1.32rem;font-weight:800;letter-spacing:-.03em;margin:0 0 4px;color:var(--ink);
+}
+.person-row .cv{margin-top:0;max-width:none}
+.person-row .topics{margin:0;padding:0;list-style:none}
+.person-row .topics li{position:relative;padding-left:14px;margin-bottom:6px;line-height:1.6}
+.person-row .topics li:last-child{margin-bottom:0}
+.person-row .topics li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--pale)}
 
 /* ---------------- activity gallery ---------------- */
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:10px}
