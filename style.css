@@ -402,17 +402,22 @@ td.win{color:var(--navy);font-weight:500}
 .cv dt{flex:0 0 100px;color:var(--ink-soft);font-size:.83rem;margin:0}
 .cv dd{margin:0}
 .cv dd .yr{color:var(--ink-soft);font-size:.86rem}
-.cv-head{
+.pi-row .cv-head{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
   font-size:1rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);
-  margin:26px 0 4px;
+  margin:44px 0 0;max-width:none;
 }
 .cv-head span{
   font-family:"Noto Sans KR",sans-serif;font-weight:500;font-size:.76rem;
   color:var(--ink-soft);letter-spacing:0;margin-left:9px;
 }
-.cv-years{max-width:none}
-.cv-years dt{flex:0 0 118px;font-family:"Barlow",sans-serif;font-size:.88rem;color:var(--ink-soft);white-space:nowrap}
+.cv-years{max-width:none;margin-top:6px}
+.cv-years > div{padding:12px 0}
+.cv-years dt{
+  flex:0 0 262px;font-family:"Barlow",sans-serif;font-size:.93rem;
+  font-weight:600;color:var(--ink);line-height:1.5;white-space:nowrap;
+}
+.cv-years dt .yr{font-weight:400;color:var(--ink-soft);font-size:.86rem}
 .cv-years dd{line-height:1.62}
 
 .roster-rows{margin-top:10px}
