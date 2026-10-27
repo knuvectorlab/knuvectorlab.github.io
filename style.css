@@ -99,6 +99,7 @@ a{color:inherit;text-decoration:none}
   font-size:.8rem;font-weight:600;letter-spacing:.1em;
   color:var(--teal);margin:0 0 14px;
 }
+.page-head h1 .h1-ko{font-weight:600;font-size:.62em;color:var(--ink-soft);letter-spacing:-.02em}
 .page-head h1{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
   font-size:clamp(2rem,4.8vw,3rem);font-weight:800;line-height:1.14;
@@ -336,15 +337,29 @@ ul.ppt li.sub::before{left:14px;background:var(--pale)}
 
 /* ---------------- publications ---------------- */
 #publist{border-top:1.5px solid var(--ink)}
-.pub{display:grid;grid-template-columns:46px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
-.pub:last-of-type{border-bottom:1.5px solid var(--ink)}
-@media(max-width:620px){.pub{grid-template-columns:1fr;gap:8px}}
-.pub-no{
+
+.year-group{padding:26px 0 30px;border-bottom:1px solid var(--line)}
+.year-group:last-child{border-bottom:1.5px solid var(--ink)}
+.year-label{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
-  font-size:.92rem;font-weight:800;color:var(--pale);padding-top:2px;letter-spacing:.02em;
+  font-size:1.1rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);
+  margin:0 0 18px;
 }
-.pub-year{font-size:.78rem;color:var(--teal);font-weight:600;letter-spacing:.06em;margin:0 0 6px}
+.pub{
+  display:grid;grid-template-columns:40px minmax(0,1fr);gap:18px;
+  padding:0;border:0;margin-bottom:26px;
+}
+.pub:last-child{margin-bottom:0}
+@media(max-width:620px){.pub{grid-template-columns:1fr;gap:6px}}
 .pub h3{font-size:1.06rem;font-weight:600;line-height:1.5;letter-spacing:-.016em;margin:0 0 9px;max-width:none}
+.pub h3 a{color:inherit;text-decoration:none;transition:color .15s}
+.pub h3 a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.pub h3 a::after{
+  content:"";display:inline-block;width:6px;height:6px;margin-left:7px;vertical-align:2px;
+  border-top:1.4px solid var(--pale);border-right:1.4px solid var(--pale);
+  transform:rotate(45deg);transition:border-color .15s;
+}
+.pub h3 a:hover::after{border-color:var(--navy)}
 .pub h3 i{font-style:italic}
 .pub .authors{font-size:.92rem;color:var(--ink-soft);margin:0 0 3px;max-width:none}
 .pub .authors b{color:var(--ink);font-weight:600}
@@ -355,13 +370,6 @@ ul.ppt li.sub::before{left:14px;background:var(--pale)}
   font-size:.75rem;font-style:normal;color:var(--teal);
   border:1px solid var(--line);border-radius:999px;vertical-align:1px;
 }
-.pub-actions{display:flex;gap:9px;flex-wrap:wrap}
-.pub-actions a{
-  font-size:.81rem;font-weight:500;color:var(--navy);
-  border:1px solid var(--line);border-radius:999px;padding:5px 15px;
-  transition:border-color .15s,background-color .15s;
-}
-.pub-actions a:hover{border-color:var(--blue);background:var(--wash)}
 .empty-note{padding:30px 0;font-size:.94rem;color:var(--ink-soft)}
 
 /* ---------------- tables ---------------- */
