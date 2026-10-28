@@ -6,14 +6,25 @@
 
 :root{
   --paper:#ffffff;
-  --wash:#f2f6f9;
-  --ink:#1d2935;
-  --ink-soft:#64707d;
-  --line:#dce4ec;
+  --wash:#f3f6fa;
+
+  /* ── 로고 3색을 기준으로 한 글자색 위계 ───────────────────────
+     1차(제목·강조)  --navy      #123b73  로고 'KIM'
+     2차(영문 라벨)  --navy-mid  #5a7fa8  navy와 'LAB' 사이 단계
+     3차(장식·선)    --pale      #9db9d4  로고 'LAB'
+     본문            --ink       #2b3a49  로고 태그라인 회색의 농도 단계
+     보조 설명       --ink-soft  #6b7b8c  로고 태그라인 회색
+     ──────────────────────────────────────────────────────── */
   --navy:#123b73;
-  --blue:#5e9fe9;
-  --teal:#49c2c0;
-  --pale:#c8d8e5;
+  --navy-mid:#5a7fa8;
+  --pale:#9db9d4;
+  --ink:#2b3a49;
+  --ink-soft:#6b7b8c;
+  --line:#dce5ee;
+
+  /* 구버전 토큰 (하위 호환) */
+  --blue:var(--navy-mid);
+  --teal:var(--navy-mid);
   --nav-h:76px;
   --max:1080px;
 }
@@ -59,7 +70,7 @@ a{color:inherit;text-decoration:none}
   display:flex;align-items:center;justify-content:space-between;gap:28px;
 }
 .brand{display:flex;align-items:center;padding:12px 0}
-.brand img{height:40px;width:auto}
+.brand img{height:27px;width:auto}
 
 .menu{display:flex;list-style:none;margin:0;padding:0;gap:2px;flex-wrap:wrap}
 .menu a{
@@ -70,8 +81,8 @@ a{color:inherit;text-decoration:none}
 }
 .menu a::after{
   content:"";width:5px;height:5px;
-  border-right:1.6px solid var(--teal);
-  border-bottom:1.6px solid var(--teal);
+  border-right:1.6px solid var(--navy-mid);
+  border-bottom:1.6px solid var(--navy-mid);
   transform:rotate(-45deg);
   opacity:0;transition:opacity .16s;
 }
@@ -84,7 +95,7 @@ a{color:inherit;text-decoration:none}
   .mast-in{flex-direction:column;align-items:stretch;gap:0;padding:0 20px}
   .mast-in > nav{width:100%;min-width:0;max-width:100%}
   .brand{padding:14px 0 6px}
-  .brand img{height:34px}
+  .brand img{height:23px}
   .menu{
     padding-bottom:10px;gap:0;flex-wrap:nowrap;
     overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:100%;
@@ -97,7 +108,7 @@ a{color:inherit;text-decoration:none}
 .page-head{padding:72px 0 44px;border-bottom:1px solid var(--line)}
 .kicker{
   font-size:.8rem;font-weight:600;letter-spacing:.1em;
-  color:var(--teal);margin:0 0 14px;
+  color:var(--navy-mid);margin:0 0 14px;
 }
 .page-head h1 .h1-ko{font-weight:600;font-size:.62em;color:var(--ink-soft);letter-spacing:-.02em}
 .page-head h1{
@@ -134,7 +145,7 @@ a{color:inherit;text-decoration:none}
 }
 .arrow-link::after{
   content:"";width:6px;height:6px;
-  border-right:1.9px solid var(--teal);border-bottom:1.9px solid var(--teal);
+  border-right:1.9px solid var(--navy-mid);border-bottom:1.9px solid var(--navy-mid);
   transform:rotate(-45deg);transition:transform .18s;
 }
 .arrow-link:hover::after{transform:rotate(-45deg) translate(2.5px,2.5px)}
@@ -156,7 +167,7 @@ a{color:inherit;text-decoration:none}
   font-size:clamp(1.45rem,3vw,2rem);font-weight:800;line-height:1.18;
   letter-spacing:-.03em;margin:0 0 8px;
 }
-.block .sub-en{font-size:.8rem;letter-spacing:.09em;color:var(--teal);margin:0 0 24px;text-transform:uppercase}
+.block .sub-en{font-size:.8rem;letter-spacing:.09em;color:var(--navy-mid);margin:0 0 24px;text-transform:uppercase}
 .block p{margin:0 0 18px;max-width:68ch}
 .block p:last-child{margin-bottom:0}
 .lede{font-size:1.05rem}
@@ -186,7 +197,7 @@ a{color:inherit;text-decoration:none}
   font-size:clamp(1.2rem,2.5vw,1.55rem);font-weight:800;letter-spacing:-.028em;
   margin:0;line-height:1.26;
 }
-.axis .sub-en{font-size:.79rem;letter-spacing:.07em;color:var(--teal);margin:0 0 18px;padding-left:62px}
+.axis .sub-en{font-size:.79rem;letter-spacing:.07em;color:var(--navy-mid);margin:0 0 18px;padding-left:62px}
 .axis-body{padding-left:62px}
 @media(max-width:620px){
   .axis .sub-en,.axis-body{padding-left:0}
@@ -198,14 +209,14 @@ a{color:inherit;text-decoration:none}
 ul.dashed{margin:0;padding:0;list-style:none;max-width:70ch}
 ul.dashed li{position:relative;padding-left:19px;margin-bottom:11px;font-size:.95rem;color:var(--ink-soft)}
 ul.dashed li:last-child{margin-bottom:0}
-ul.dashed li::before{content:"";position:absolute;left:0;top:.78em;width:9px;height:1px;background:var(--teal)}
+ul.dashed li::before{content:"";position:absolute;left:0;top:.78em;width:9px;height:1px;background:var(--pale)}
 ul.dashed li b{color:var(--ink);font-weight:600}
 ul.dashed li .group{display:block;color:var(--navy);font-weight:600;margin-bottom:4px}
 
 .aside-note{
   margin:24px 0 0;padding:17px 21px;background:var(--wash);
   font-size:.9rem;color:var(--ink-soft);line-height:1.72;max-width:70ch;
-  border-left:3px solid var(--teal);
+  border-left:3px solid var(--navy-mid);
 }
 .aside-note b{color:var(--ink);font-weight:600}
 
@@ -257,7 +268,7 @@ ul.dashed li .group{display:block;color:var(--navy);font-weight:600;margin-botto
   letter-spacing:-.028em;line-height:1.34;margin:0;
   transition:color .15s;
 }
-.topic-title .en{font-weight:600;color:var(--blue)}
+.topic-title .en{font-weight:600;color:var(--navy-mid)}
 .topic-caret{
   flex:0 0 auto;width:9px;height:9px;margin:12px 4px 0 0;
   border-right:2px solid var(--pale);border-bottom:2px solid var(--pale);
@@ -270,7 +281,7 @@ ul.dashed li .group{display:block;color:var(--navy);font-weight:600;margin-botto
 .topic-body .topic-lead{
   font-size:.97rem;color:var(--navy);margin:0 0 4px;max-width:none;line-height:1.7;
 }
-.topic-rule{width:54px;height:2px;background:var(--teal);margin:16px 0 22px;border:0}
+.topic-rule{width:54px;height:2px;background:var(--navy-mid);margin:16px 0 22px;border:0}
 
 .topic-cols{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:stretch}
 @media(max-width:860px){.topic-cols{grid-template-columns:1fr;gap:24px}}
@@ -323,7 +334,7 @@ ul.ppt li.sub::before{left:14px;background:var(--pale)}
 
 .topic-note{
   margin:11px 0 0;padding:8px 0 8px 20px;
-  border-left:3px solid var(--blue);max-width:none;
+  border-left:3px solid var(--navy-mid);max-width:none;
 }
 .note-title{
   margin:0 0 7px;font-size:.93rem;font-weight:700;color:var(--navy);letter-spacing:-.018em;
@@ -367,7 +378,7 @@ ul.ppt li.sub::before{left:14px;background:var(--pale)}
 .pub .venue i{font-style:italic;color:var(--navy)}
 .pub .venue .hl{
   display:inline-block;margin-left:9px;padding:1px 10px;
-  font-size:.75rem;font-style:normal;color:var(--teal);
+  font-size:.75rem;font-style:normal;color:var(--navy-mid);
   border:1px solid var(--line);border-radius:999px;vertical-align:1px;
 }
 .empty-note{padding:30px 0;font-size:.94rem;color:var(--ink-soft)}
@@ -430,7 +441,7 @@ td.win{color:var(--navy);font-weight:500}
 }
 .group-label span{
   font-family:"Barlow",sans-serif;font-weight:500;font-size:.72rem;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-left:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--navy-mid);margin-left:10px;
 }
 .person-row{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:start;margin-bottom:40px}
 .person-row:last-child{margin-bottom:6px}
@@ -470,8 +481,8 @@ td.win{color:var(--navy);font-weight:500}
 .foot-grid p{margin:0 0 5px;line-height:1.75}
 .foot-grid a{color:var(--navy)}
 .foot-grid a:hover{text-decoration:underline}
-.foot-logo{height:38px;width:auto;margin-bottom:14px;opacity:.9}
+.foot-logo{height:25px;width:auto;margin-bottom:14px;opacity:.9}
 .rights{padding-top:22px;font-size:.78rem}
 
-*:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+*:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
