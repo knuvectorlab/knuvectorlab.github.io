@@ -25,7 +25,8 @@
   /* 구버전 토큰 (하위 호환) */
   --blue:var(--navy-mid);
   --teal:var(--navy-mid);
-  --nav-h:76px;
+  --nav-h:140px;
+  --max-wide:1250px;
   --max:1080px;
 }
 
@@ -65,24 +66,24 @@ a{color:inherit;text-decoration:none}
   border-bottom:1px solid var(--line);
 }
 .mast-in{
-  max-width:var(--max);margin:0 auto;padding:0 28px;
+  max-width:var(--max-wide);margin:0 auto;padding:0 28px;
   min-height:var(--nav-h);
-  display:flex;align-items:center;justify-content:space-between;gap:28px;
+  display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:0;
 }
-.brand{display:flex;align-items:center;padding:12px 0}
+.brand{display:flex;align-items:center;padding:16px 0 4px}
 .brand img{height:48px;width:auto}
 
-.menu{display:flex;list-style:none;margin:0;padding:0;gap:2px;flex-wrap:wrap}
+.menu{display:flex;list-style:none;margin:0 0 0 -8px;padding:0 0 12px;gap:2px;flex-wrap:wrap}
 .menu a{
   display:inline-flex;align-items:center;gap:6px;
-  font-size:.87rem;color:var(--ink-soft);
-  padding:8px 12px;border-radius:6px;
+  font-size:1.57rem;color:var(--ink-soft);
+  padding:8px 8px;border-radius:6px;
   transition:color .16s,background-color .16s;
 }
 .menu a::after{
-  content:"";width:5px;height:5px;
-  border-right:1.6px solid var(--navy-mid);
-  border-bottom:1.6px solid var(--navy-mid);
+  content:"";width:7px;height:7px;
+  border-right:2px solid var(--navy-mid);
+  border-bottom:2px solid var(--navy-mid);
   transform:rotate(-45deg);
   opacity:0;transition:opacity .16s;
 }
@@ -91,7 +92,7 @@ a{color:inherit;text-decoration:none}
 .menu a.current{color:var(--navy);font-weight:600}
 .menu a.current::after{opacity:1}
 
-@media(max-width:940px){
+@media(max-width:1120px){
   .mast-in{flex-direction:column;align-items:stretch;gap:0;padding:0 20px}
   .mast-in > nav{width:100%;min-width:0;max-width:100%}
   .brand{padding:14px 0 6px}
@@ -101,7 +102,7 @@ a{color:inherit;text-decoration:none}
     overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:100%;
   }
   .menu::-webkit-scrollbar{display:none}
-  .menu a{padding:6px 10px;white-space:nowrap;font-size:.82rem}
+  .menu a{padding:6px 9px;white-space:nowrap;font-size:1.3rem}
 }
 
 /* ---------------- page header ---------------- */
@@ -415,12 +416,12 @@ td.win{color:var(--navy);font-weight:500}
 .cv dd .yr{color:var(--ink-soft);font-size:.86rem}
 .pi-row .cv-head{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
-  font-size:1rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);
-  margin:44px 0 0;max-width:none;
+  font-size:1.5rem;font-weight:800;letter-spacing:-.025em;color:var(--navy);
+  margin:46px 0 0;max-width:none;
 }
 .cv-head span{
-  font-family:"Noto Sans KR",sans-serif;font-weight:500;font-size:.76rem;
-  color:var(--ink-soft);letter-spacing:0;margin-left:9px;
+  font-family:"Noto Sans KR",sans-serif;font-weight:500;font-size:1.14rem;
+  color:var(--ink-soft);letter-spacing:-.01em;margin-left:12px;
 }
 .cv-years{max-width:none;margin-top:6px}
 .cv-years > div{padding:12px 0}
@@ -432,16 +433,19 @@ td.win{color:var(--navy);font-weight:500}
 .cv-years dd{line-height:1.62}
 
 .roster-rows{margin-top:10px}
+table.alumni{margin-top:2px}
+table.alumni td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+table.alumni .al-en{font-weight:400;color:var(--ink-soft);font-size:.86rem;margin-left:7px}
 .person-group{padding-top:30px;border-top:1px solid var(--line)}
 .person-group:first-child{padding-top:14px;border-top:0}
 .group-label{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
-  font-size:1.02rem;font-weight:800;letter-spacing:-.025em;color:var(--navy);
-  margin:0 0 26px;
+  font-size:1.53rem;font-weight:800;letter-spacing:-.03em;color:var(--navy);
+  margin:0 0 28px;
 }
 .group-label span{
-  font-family:"Barlow",sans-serif;font-weight:500;font-size:.72rem;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--navy-mid);margin-left:10px;
+  font-family:"Barlow",sans-serif;font-weight:500;font-size:1.08rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--navy-mid);margin-left:13px;
 }
 .person-row{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:start;margin-bottom:40px}
 .person-row:last-child{margin-bottom:6px}
