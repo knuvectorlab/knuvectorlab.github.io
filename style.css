@@ -465,6 +465,24 @@ table.alumni .al-en{font-weight:400;color:var(--ink-soft);font-size:.86rem;margi
 .person-row .topics li:last-child{margin-bottom:0}
 .person-row .topics li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--pale)}
 
+/* ---------------- news timeline ---------------- */
+#newslist{border-top:1.5px solid var(--ink)}
+.news-list{list-style:none;margin:0;padding:0}
+.news-item{display:grid;grid-template-columns:168px minmax(0,1fr);gap:20px;margin-bottom:20px}
+.news-item:last-child{margin-bottom:4px}
+.news-date{
+  font-family:"Barlow",sans-serif;font-size:.97rem;font-weight:600;color:var(--ink);
+  line-height:1.52;white-space:nowrap;
+}
+.news-date .tbd{font-weight:400;color:var(--pale)}
+.news-title{font-size:1.04rem;font-weight:600;line-height:1.45;margin:0 0 3px;max-width:none;color:var(--ink)}
+.news-title .news-note{font-weight:400;font-size:.9rem;color:var(--ink-soft)}
+.news-detail{font-size:.93rem;color:var(--ink-soft);margin:0;max-width:none}
+@media(max-width:640px){
+  .news-item{grid-template-columns:1fr;gap:4px}
+  .news-date{font-size:.9rem}
+}
+
 /* ---------------- activity gallery ---------------- */
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:10px}
 .shot{margin:0}
