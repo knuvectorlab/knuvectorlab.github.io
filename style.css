@@ -405,7 +405,7 @@ td.win{color:var(--navy);font-weight:500}
 .agencies img.tall{height:56px}
 
 /* ---------------- people ---------------- */
-.pi-row{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:start}
+.pi-row{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:start;margin-top:30px}
 @media(max-width:760px){.pi-row{grid-template-columns:1fr;gap:26px}}
 .portrait{width:100%;border-radius:4px;background:var(--wash);aspect-ratio:4/5;object-fit:cover}
 .pi-row h2{margin-bottom:4px}
@@ -419,14 +419,14 @@ td.win{color:var(--navy);font-weight:500}
 .person-row .cv-head{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
   font-size:1.5rem;font-weight:800;letter-spacing:-.025em;color:var(--navy);
-  margin:40px 0 0;max-width:none;
+  margin:26px 0 0;max-width:none;
 }
 .cv-head span{
   font-family:"Noto Sans KR",sans-serif;font-weight:500;font-size:1.14rem;
   color:var(--ink-soft);letter-spacing:-.01em;margin-left:12px;
 }
-.cv-years{max-width:none;margin-top:8px;font-size:1.04rem}
-.cv-years > div{padding:9px 0}
+.cv-years{max-width:none;margin-top:4px;font-size:1.04rem}
+.cv-years > div{padding:7px 0}
 .cv-years dt{
   flex:0 0 282px;font-family:"Barlow",sans-serif;font-size:1.06rem;
   font-weight:600;color:var(--ink);line-height:1.5;white-space:nowrap;
@@ -434,7 +434,7 @@ td.win{color:var(--navy);font-weight:500}
 .cv-years dt .yr{font-weight:400;color:var(--ink-soft);font-size:.95rem}
 .cv-years dd{line-height:1.66}
 
-.roster-rows{margin-top:10px}
+.roster-rows{margin-top:30px}
 table.alumni{margin-top:2px}
 table.alumni th span{font-weight:400;color:var(--pale);margin-left:5px;letter-spacing:0;text-transform:none}
 table.alumni td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
@@ -455,11 +455,12 @@ table.alumni .al-en{font-weight:400;color:var(--ink-soft);font-size:.86rem;margi
 @media(max-width:760px){.person-row{grid-template-columns:1fr;gap:26px}}
 .person-name{
   font-family:"Gothic A1","Noto Sans KR",sans-serif;
-  font-size:1.32rem;font-weight:800;letter-spacing:-.03em;margin:0 0 4px;color:var(--ink);
+  font-size:clamp(1.45rem,3vw,2rem);font-weight:800;line-height:1.18;
+  letter-spacing:-.03em;margin:0 0 4px;color:var(--ink);
 }
 .person-row .cv{margin-top:0;max-width:none}
 .person-row .cv-years dt{flex:0 0 132px}
-.person-row > div > .cv-head:first-of-type{margin-top:4px}
+.person-row > div > .cv-head:first-of-type{margin-top:2px}
 .person-row .topics{margin:12px 0 0;padding:0;list-style:none}
 .person-row .topics li{position:relative;padding-left:16px;margin-bottom:8px;line-height:1.66;font-size:1.04rem}
 .person-row .topics li:last-child{margin-bottom:0}
