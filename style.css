@@ -485,12 +485,26 @@ table.alumni .al-en{font-weight:400;color:var(--ink-soft);font-size:.86rem;margi
 }
 
 /* ---------------- activity gallery ---------------- */
+.photo-year{
+  display:grid;grid-template-columns:110px minmax(0,1fr);gap:26px;
+  padding-top:18px;border-top:1px solid var(--line);margin-top:20px;
+}
+.photo-year:first-of-type{margin-top:16px}
+.photo-year .year-label{margin:0;padding-top:2px}
+.photo-year .gallery{grid-template-columns:repeat(auto-fill,minmax(258px,290px));margin-top:0}
+.photo-year .year-label .tbd{display:block;font-weight:500;color:var(--pale);font-size:.84rem;line-height:1.45}
+@media(max-width:640px){
+  .photo-year{grid-template-columns:1fr;gap:12px}
+  .photo-year .year-label{padding-top:0}
+  .photo-year .year-label .tbd{display:inline}
+}
+
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:10px}
 .shot{margin:0}
 .shot img{width:100%;height:auto;border-radius:4px;background:var(--wash);aspect-ratio:4/3;object-fit:cover}
 .shot figcaption{font-size:.86rem;color:var(--ink-soft);margin-top:10px;line-height:1.6}
 .gallery.wide{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}
-@media(max-width:560px){.gallery,.gallery.wide{grid-template-columns:1fr}}
+@media(max-width:560px){.gallery,.gallery.wide,.photo-year .gallery{grid-template-columns:1fr}}
 
 /* ---------------- contact ---------------- */
 .contact-rows{max-width:62ch}
